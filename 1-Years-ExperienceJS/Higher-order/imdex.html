@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Now see in this all function is good working properly but DRY principla is not follow.
+       const radius = [3,1,2,4];
+
+    // first area of circle.
+    const calculateArea = function (arr) {
+        let output = [];
+        for(let i=0; i<arr.length; i++) {
+            output.push(Math.PI * arr[i] * arr[i]);
+        }
+        return output;
+    }
+
+    // second circumFerence.
+    const calculateCircumFerence = function(arr) {
+        let output = [];
+        for(let i = 0; i< arr.length; i++) {
+            output.push( 2 * Math.PI* arr[i]);
+        }
+        return output;
+    }
+
+    // Third, diameter.
+    const calculateDiameter = function (arr) {
+        let output = [];
+        for(let i = 0;  i<arr.length; i++) {
+            output.push(2 * arr[i]);
+        }
+        return output;
+    }
+
+    console.log(calculateArea(radius));
+    console.log(calculateCircumFerence(radius));
+    console.log(calculateDiameter(radius));
+    
+    </script>
+</body>
+</html>

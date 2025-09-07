@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="counter" data-count="0">0</div>
+    <button type="button" onclick="counterClick()">increment</button>
+    <script>
+      // // closuer.
+      // let counter = document.getElementById("counter");
+      // function counterClick() {
+      //   let count = parseInt(counter.getAttribute("data-count"));
+      //   count++;
+      //   function innerCounter() {
+      //     counter.setAttribute("data-count", count);
+      //     counter.textContent = count;
+      //   }
+      //   innerCounter();
+      // }
+
+      function counterFunction() {
+        let a = 0;
+        function inner() {
+          console.log(++a);
+        }
+        inner.reset = function () {
+          a = 0;
+          console.log(a);
+        };
+
+        return inner; //
+      }
+
+      const abc = counterFunction();
+
+      // console.log(abc);
+
+      abc();
+      abc();
+      abc.reset();
+      abc();
+      abc();
+    </script>
+  </body>
+</html>

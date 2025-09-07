@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>contructor function in closure</h1>
+
+    <script>
+        function Closure() {
+            let count = 0;
+            this.increment = function() {
+                count++;
+                console.log(count);
+            }
+            this.decrement = function() {
+                count--;
+                console.log(count);
+            }
+        }
+
+        // contructor function make an insatnce.
+        const counter1 = new Closure();
+
+        counter1.increment();
+        counter1.increment();
+        counter1.decrement();
+
+    </script>
+</body>
+</html>

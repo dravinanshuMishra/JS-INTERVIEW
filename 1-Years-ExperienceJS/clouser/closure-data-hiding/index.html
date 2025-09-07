@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data Hinding
+        <p>Data hiding is a concept in programming where you restrict the access to certain data or variables, preventing them from being directly manipulated or accessed by other parts of the program</p>
+    </h1>
+
+    <script>
+        function outer() {
+            let count = 0; //it is a private data (data hiding).
+            return function inner() {
+                count++;
+                console.log(count);
+            }
+        }
+
+        let couter1 = outer();
+        couter1();
+        couter1();
+        // console.log(count); // Uncaught ReferenceError: count is not defined.
+
+    </script>
+</body>
+</html>

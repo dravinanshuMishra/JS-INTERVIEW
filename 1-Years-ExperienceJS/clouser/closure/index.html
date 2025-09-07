@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Closure Interview</h1>
+
+    <script>
+        function outest() {
+            var c = 20;
+            function outer(a) {
+                let b = 30; 
+                function inner() {
+                    console.log(c, b, a);
+                }
+                return inner;
+            }
+            return outer;
+        }
+
+        // calling of the function.
+        outest()("hello world")(); 
+
+        /*
+          In summary, outest()("hello world")() is a chained function call that first calls outest() to get the outer function, then calls outer("hello world") to get the inner function, and finally calls inner() to log the values of c, b, and a.
+        */
+
+    </script>
+</body>
+</html>
