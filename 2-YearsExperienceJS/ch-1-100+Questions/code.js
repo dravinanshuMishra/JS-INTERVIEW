@@ -79,3 +79,27 @@ console.log(parseInt("10px")); // 10
 // 13. array check. array hai ya nahi.
 const arr10 = [1,2,3];
 console.log(Array.isArray(arr10)); // true
+
+
+
+// 14. Clouser examples.
+function outer() {
+    let count = 0;
+    return function inner() {
+        count++;
+        console.log(count);
+    }
+}
+const fn = outer();
+fn(); //1
+fn(); //2
+
+
+// 15.
+console.log([] == false); // true, why? because [] is converted to '' (empty string) and false is converted to '' (empty string) during type coercion.
+// console.log([] === false); // false, because different types.
+// console.log([] === false); // false, why? because different types. how? because [] is an object and false is a boolean.
+
+
+// 16.
+console.log([1,2,3].map((num => num*2))); // [2,4,6] // map returns a new array.
